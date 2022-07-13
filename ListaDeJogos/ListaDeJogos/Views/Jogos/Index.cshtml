@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ListaDeJogos.Models.Jogo>
+
+@{
+    ViewData["Title"] = "Lista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js"></script>
+<script src="C:\Users\edos0\source\repos\ListaDeJogos\ListaDeJogos\wwwroot\js\site.js" asp-append-version="true"></script>
+
+<h1>Lista</h1>
+
+<p>
+    <a asp-action="Create">Adicionar mais</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Jogo
+            </th>
+            <th>
+                Gênero
+            </th>
+            <th>
+                Empresa
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>
+                Data
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zerou)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataZerou)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>               
+            </td>
+        </tr>
+}      
+    </tbody>
+</table>
+<input type="button" value="Capturar" class="btn btn-primary" onclick="capture()"/>
+

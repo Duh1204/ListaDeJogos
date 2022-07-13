@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <h1 class="display-4">Bem-vindo a Lista de Jogos!</h1><br>
+    <div class="lead">
+        <h2>O que é a Lista de Jogos?</h2>
+    <p>A lista de Jogos é uma lista onde você pode adicionar títulos da indústria de jogos que você zerou ou que planeja zerar. Este site veio para facilitar a organização de todas as pessoas que amam jogar. Adicione seus títulos favoritos, classificando-os com nome, gênero, e mais categorias. </p>
+    </div>
+    @if (SignInManager.IsSignedIn(User))
+        {
+            <a class="btn btn-primary btn-lg" asp-controller="Jogos" asp-action="Index">Começar &raquo;</a>
+        }
+        else
+        {
+            //<p><a class="btn btn-primary btn-lg asp-controller="Identity" asp-action="/Account/Login">Logar &raquo;</a></p>
+            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary btn-lg">Logar &raquo;</a>
+        }
