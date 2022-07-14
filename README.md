@@ -4,4 +4,4 @@ Projeto final proposto para a academia .Net envolvendo a criação de um website
 Tecnologias usadas: Asp net Core MVC, Entity Framework, Identity UI, SQL, C#, HTML, CSS, JS.
 Ideia central baseado na criação de uma lista para organizar jogos que o usuário já jogou ou que planeja jogar.
 
-![lista](https://user-images.githubusercontent.com/96741532/178997795-b2c63d68-bd17-4572-8a0f-2fc5593733ee.png)
+![lista](https://user-images.githubusercontent.com/96741532/178997967-b5371b9a-5325-4cf7-ba55-a93aba3ce316.png)
