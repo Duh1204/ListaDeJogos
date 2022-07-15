@@ -1,20 +1,17 @@
 ﻿@model IEnumerable<ListaDeJogos.Models.Jogo>
 
+
 @{
     ViewData["Title"] = "Lista";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js"></script>
 <script src="C:\Users\edos0\source\repos\ListaDeJogos\ListaDeJogos\wwwroot\js\site.js" asp-append-version="true"></script>
 
-<h1>Lista</h1>
-
-<p>
-    <a asp-action="Create">Adicionar mais</a>
-</p>
-<table class="table">
-    <thead>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
         <tr>
             <th>
                 Jogo
@@ -26,10 +23,10 @@
                 Empresa
             </th>
             <th>
-                Estado
+                Zerou
             </th>
             <th>
-                Data
+                Dia
             </th>
             <th></th>
         </tr>
@@ -53,13 +50,13 @@
                 @Html.DisplayFor(modelItem => item.DataZerou)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>               
+                <a href="@Url.Content("~/Jogos/Edit/" + @item.Id)"> <i style="color:#414A4C" class="fa fa-edit" aria-hidden="true"></i></a> |
+                <a href="@Url.Content("~/Jogos/Delete/" + @item.Id)"> <i style="color:#FF7276" class="fa-solid fa-trash-can" aria-hidden="true"></i></a>     
             </td>
         </tr>
 }      
     </tbody>
 </table>
-<input type="button" value="Capturar" class="btn btn-primary" onclick="capture()"/>
 
+<a asp-controller="Jogos" asp-action="Create" class="btn btn-dark">Adicionar mais</a>
+<input type="button" value="Capturar" class="btn btn-outline-dark" onclick="capture()"/>

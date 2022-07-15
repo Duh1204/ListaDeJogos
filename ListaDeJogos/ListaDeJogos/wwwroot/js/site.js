@@ -7,7 +7,7 @@ function capture() {
     html2canvas(document.body).then((canvas) => {
         let a = document.createElement("a");
         a.download = "ss.png";        
-        a.href = canvas.toDataURL("image/webp");
+        a.href = canvas.toDataURL("image/webp", 1.0);
         console.log(a.href);
         a.click();
     });

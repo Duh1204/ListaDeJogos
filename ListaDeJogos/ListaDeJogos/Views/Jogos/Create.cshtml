@@ -43,14 +43,11 @@
                 <span asp-validation-for="User" class="text-danger"></span>
             </div><br>
             <div class="form-group">
-                <input type="submit" value="Adicionar" class="btn btn-primary" />
+                <input type="submit" value="Adicionar" class="btn btn-dark" />
+                <a asp-action="Index" class="btn btn-dark">Voltar para lista</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Voltar para lista</a>
 </div>
 
 @section Scripts {

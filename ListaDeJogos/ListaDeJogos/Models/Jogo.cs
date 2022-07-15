@@ -11,7 +11,7 @@ namespace ListaDeJogos.Models
         public string Empresa { get; set; }
         public bool Zerou { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM}", ApplyFormatInEditMode = true)]
         public DateTime DataZerou { get; set; }
         public string User { get; set; }
     }
